@@ -13,17 +13,20 @@
         android:text="@string/Quotes"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lottie_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="250dp"
         android:layout_marginBottom="250dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp">
+        android:layout_marginRight="80dp"
+        android:visibility="invisible">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animationView"
