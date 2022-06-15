@@ -98,6 +98,10 @@ dependencies {
     //coroutine
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
+    //lottie
+    def lottieVersion = "4.0.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
 
 
 }
