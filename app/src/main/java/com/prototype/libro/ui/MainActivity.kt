@@ -1,7 +1,7 @@
 package com.prototype.libro.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.prototype.libro.R
@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        if (supportActionBar != null) {
+            supportActionBar?.hide()
+        }
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.main_nav_holder) as NavHostFragment
         navController = navHostFragment.navController
