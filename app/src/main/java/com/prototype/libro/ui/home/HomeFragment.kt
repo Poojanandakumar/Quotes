@@ -22,11 +22,10 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         viewModel.getData()
         viewModel.data.observe(viewLifecycleOwner) {
-            val a = it.results
             val recyclerView = binding.root.findViewById<RecyclerView>(R.id.recyclerView)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             binding.recyclerView.adapter =
-                HomeAdapter(a)
+                HomeAdapter(it.results)
         }
         viewModel.error.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()

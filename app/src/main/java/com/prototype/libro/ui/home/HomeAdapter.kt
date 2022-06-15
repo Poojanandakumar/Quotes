@@ -10,19 +10,22 @@ import com.prototype.model.QuotesData
 
 class HomeAdapter( private val mList: List<QuotesData.Result>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val name: TextView = itemView.findViewById(R.id.name)
+        val content: TextView = itemView.findViewById(R.id.content)
+        val author:TextView = itemView.findViewById(R.id.author)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.animals, parent, false)
+            .inflate(R.layout.quotes, parent, false)
 
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val name = mList[position].content
-        holder.name.text = name
+        val content = mList[position].content
+        val author = mList[position].author
+        holder.content.text = content
+        holder.author.text = "~ $author"
     }
 
     override fun getItemCount(): Int {
