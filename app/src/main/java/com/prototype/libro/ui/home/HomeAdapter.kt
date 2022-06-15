@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.prototype.libro.R
-import com.prototype.model.AnimalData
+import com.prototype.model.QuotesData
 
-class HomeAdapter( private val mList: List<AnimalData>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter( private val mList: List<QuotesData.Result>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.name)
     }
@@ -22,7 +21,7 @@ class HomeAdapter( private val mList: List<AnimalData>) : RecyclerView.Adapter<H
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val name = mList[position].name
+        val name = mList[position].content
         holder.name.text = name
     }
 
