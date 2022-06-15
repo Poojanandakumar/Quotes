@@ -1,4 +1,4 @@
-package com.prototype.libro
+package com.prototype.quotes
 
 import org.junit.Test
 

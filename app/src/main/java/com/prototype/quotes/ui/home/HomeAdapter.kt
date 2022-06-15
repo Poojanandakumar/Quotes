@@ -1,11 +1,11 @@
-package com.prototype.libro.ui.home
+package com.prototype.quotes.ui.home
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.prototype.libro.R
+import com.prototype.quotes.R
 import com.prototype.model.QuotesData
 
 class HomeAdapter( private val mList: List<QuotesData.Result>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {

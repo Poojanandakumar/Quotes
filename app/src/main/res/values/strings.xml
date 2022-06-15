@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Libro</string>
+    <string name="app_name">Quotes</string>
     <string name="hello_blank_fragment">Hello blank fragment pooja</string>
     <string name="Quotes">Quotes</string>
 </resources>

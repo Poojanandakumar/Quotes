@@ -1,11 +1,11 @@
-package com.prototype.libro.ui.favourite
+package com.prototype.quotes.ui.favourite
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.prototype.libro.R
+import com.prototype.quotes.R
 
 class FavouriteFragment : Fragment() {
 

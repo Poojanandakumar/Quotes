@@ -1,4 +1,4 @@
-package com.prototype.libro.ui.home
+package com.prototype.quotes.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.prototype.libro.R
-import com.prototype.libro.databinding.FragmentHomeBinding
+import com.prototype.quotes.R
+import com.prototype.quotes.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding

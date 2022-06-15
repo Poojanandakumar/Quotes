@@ -1,4 +1,4 @@
-package com.prototype.libro.util
+package com.prototype.quotes.util
 
 import com.prototype.model.QuotesData
 import retrofit2.Response

@@ -1,11 +1,11 @@
-package com.prototype.libro.ui
+package com.prototype.quotes.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.prototype.libro.R
-import com.prototype.libro.databinding.ActivityMainBinding
+import com.prototype.quotes.R
+import com.prototype.quotes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController

@@ -1,10 +1,10 @@
-package com.prototype.libro.ui.home
+package com.prototype.quotes.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.prototype.libro.util.RetrofitInstance
+import com.prototype.quotes.util.RetrofitInstance
 import com.prototype.model.QuotesData
 import kotlinx.coroutines.launch
 import retrofit2.HttpException

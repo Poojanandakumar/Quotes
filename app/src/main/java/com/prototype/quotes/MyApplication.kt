@@ -1,4 +1,4 @@
-package com.prototype.libro
+package com.prototype.quotes
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
