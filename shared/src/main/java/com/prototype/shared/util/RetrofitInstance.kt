@@ -1,4 +1,4 @@
-package com.prototype.quotes.util
+package com.prototype.shared.util
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

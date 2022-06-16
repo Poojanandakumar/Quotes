@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.prototype.quotes.R
 import com.prototype.quotes.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by activityViewModels()
@@ -28,7 +30,7 @@ class HomeFragment : Fragment() {
                 HomeAdapter(it.results)
         }
         viewModel.error.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
         }
         return binding.root
     }

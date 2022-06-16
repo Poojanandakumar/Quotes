@@ -4,33 +4,30 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.prototype.quotes.util.RetrofitInstance
 import com.prototype.model.QuotesData
+import com.prototype.shared.domain.GetQuotesUseCase
+import com.prototype.shared.util.Result
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
-import java.io.IOException
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor(private val getQuotesUseCase: GetQuotesUseCase) : ViewModel() {
     private val _data = MutableLiveData<QuotesData>()
     val data: LiveData<QuotesData> = _data
 
-    private val _error = MutableLiveData<String>()
-    val error: LiveData<String> = _error
+    private val _error = MutableLiveData<Exception>()
+    val error: LiveData<Exception> = _error
     fun getData() {
         viewModelScope.launch {
-            val response = try {
-                RetrofitInstance.api.getData()
-            } catch (e: IOException) {
-                _error.value = "IOException, you might not have internet connection"
-                return@launch
-            } catch (e: HttpException) {
-               _error.value = "HttpException, unexpected response"
-                return@launch
-            }
-            if (response.isSuccessful && response.body() != null) {
-                _data.postValue(response.body()!!)
-            } else {
-                _error.value = "Response not successful"
+            when(val response = getQuotesUseCase.getQuotesData()){
+                is Result.Success ->{
+                    _data.postValue(response.data)
+                }
+                is Result.Error ->{
+                    _error.postValue(response.exception)
+                }
+                else -> {}
             }
         }
 
