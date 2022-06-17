@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="splashStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background_dark</item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
 </resources>
