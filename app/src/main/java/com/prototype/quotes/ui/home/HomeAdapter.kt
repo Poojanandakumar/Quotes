@@ -5,13 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.prototype.quotes.R
 import com.prototype.model.QuotesData
+import com.prototype.quotes.R
+import com.prototype.quotes.ui.favourite.FavouriteViewModel
 
-class HomeAdapter( private val mList: List<QuotesData.Result>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter(private val mList: List<QuotesData.Result>,private val viewModel:HomeViewModel) :
+    RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val content: TextView = itemView.findViewById(R.id.content)
-        val author:TextView = itemView.findViewById(R.id.author)
+        val author: TextView = itemView.findViewById(R.id.author)
+        val layout: View? = itemView.findViewById(R.id.cardView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,9 +29,13 @@ class HomeAdapter( private val mList: List<QuotesData.Result>) : RecyclerView.Ad
         val author = mList[position].author
         holder.content.text = content
         holder.author.text = "~ $author"
+        holder.layout?.setOnLongClickListener {
+            viewModel.addToFavourite(content,author)
+            true
+        }
     }
 
     override fun getItemCount(): Int {
-       return mList.size
+        return mList.size
     }
 }

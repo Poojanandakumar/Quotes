@@ -1,6 +1,9 @@
 package com.prototype.shared.di
 
-import android.util.Log
+import android.content.Context
+import androidx.room.Room
+import com.prototype.shared.room.FavouriteQuoteDao
+import com.prototype.shared.room.FavouriteQuoteRoomDatabase
 import com.prototype.shared.data.DefaultQuotesRepository
 import com.prototype.shared.data.QuotesDataSource
 import com.prototype.shared.data.QuotesRepository
@@ -10,8 +13,8 @@ import com.prototype.shared.util.QuotesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -27,7 +30,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideNoteDataSource(api:QuotesApi): QuotesDataSource {
+    fun provideNoteDataSource(api: QuotesApi): QuotesDataSource {
         return RestApiQuotesDataSource(api)
     }
 
@@ -51,4 +54,19 @@ object AppModule {
     fun provideQuoteApi(retrofit: Retrofit): QuotesApi {
         return retrofit.create(QuotesApi::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun provideFavouriteQuotesDAO(appDatabase: FavouriteQuoteRoomDatabase): FavouriteQuoteDao {
+        return appDatabase.favouriteQuoteDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideSearchDatabase(@ApplicationContext context : Context): FavouriteQuoteRoomDatabase {
+       return Room.databaseBuilder(context, FavouriteQuoteRoomDatabase::class.java, "favouriteQuote_database")
+            .build()
+    }
+
+
 }
