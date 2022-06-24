@@ -47,8 +47,30 @@
                 android:textColor="@color/app_basic_text_color"
                 android:textStyle="italic|bold"
                 />
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_star_outline_24"
+                android:layout_gravity="center_horizontal|end"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="17dp"
+                />
+
+            <ImageView
+                android:id="@+id/star_filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_star_24_filled"
+                android:layout_gravity="center_horizontal|end"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="17dp"
+                android:layout_marginTop="-40dp"
+                android:visibility="invisible"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.cardview.widget.CardView>
 

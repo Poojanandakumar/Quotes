@@ -1,6 +1,7 @@
 package com.prototype.shared.room
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 
@@ -8,4 +9,7 @@ import androidx.room.OnConflictStrategy
 interface FavouriteQuoteDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addFavQuote(entity: FavouriteQuoteEntity)
+
+    @Delete
+    suspend fun deleteFavQuote(entity: FavouriteQuoteEntity)
 }
