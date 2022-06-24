@@ -61,11 +61,12 @@ object AppModule {
         return appDatabase.favouriteQuoteDao()
     }
 
-//    @Singleton
-//    @Provides
-//    fun provideSearchDatabase(@ApplicationContext context : Context) =
-//        Room.databaseBuilder(context, FavouriteQuoteRoomDatabase::class.java, "favouriteQuote_database")
-//            .fallbackToDestructiveMigration()
-//                .build()
+    @Singleton
+    @Provides
+    fun provideSearchDatabase(@ApplicationContext context : Context):FavouriteQuoteRoomDatabase{
+       return Room.databaseBuilder(context, FavouriteQuoteRoomDatabase::class.java, "favouriteQuote_database")
+            .build()
+    }
+
 
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.prototype.model.QuotesData
+import com.prototype.model.room.FavouriteQuoteEntity
 import com.prototype.shared.data.FavouriteQuoteAddUseCase
 import com.prototype.shared.domain.GetQuotesUseCase
 import com.prototype.shared.util.Result
@@ -37,7 +38,7 @@ private val favouriteQuoteAddUseCase: FavouriteQuoteAddUseCase) : ViewModel() {
 
     fun addToFavourite(content:String,author:String){
         viewModelScope.launch {
-            favouriteQuoteAddUseCase.insert(content,author)
+            favouriteQuoteAddUseCase.insert(FavouriteQuoteEntity(content,author) )
         }
     }
 }
