@@ -1,9 +1,6 @@
 package com.prototype.shared.room
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
+import androidx.room.*
 
 @Dao
 interface FavouriteQuoteDao {
@@ -12,4 +9,7 @@ interface FavouriteQuoteDao {
 
     @Delete
     suspend fun deleteFavQuote(entity: FavouriteQuoteEntity)
+
+    @Query("SELECT * FROM FavouriteQuoteEntity")
+    suspend fun getFavouriteQuote(): List<FavouriteQuoteEntity>
 }

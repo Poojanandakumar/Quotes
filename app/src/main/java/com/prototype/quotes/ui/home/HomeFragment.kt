@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.prototype.quotes.R
@@ -31,6 +32,10 @@ class HomeFragment : Fragment() {
         }
         viewModel.error.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+        }
+
+        binding.favourite.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_favouriteFragment)
         }
         return binding.root
     }
