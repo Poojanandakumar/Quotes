@@ -6,11 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.prototype.model.QuotesData
 import com.prototype.quotes.R
-import com.prototype.quotes.ui.home.HomeViewModel
 import com.prototype.shared.room.FavouriteQuoteEntity
-import java.nio.file.Files.delete
 
 class FavouriteQuotesAdapter(
     private val mList: List<FavouriteQuoteEntity>,

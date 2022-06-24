@@ -1,18 +1,15 @@
 package com.prototype.quotes.ui.favourite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.prototype.quotes.R
 import com.prototype.quotes.databinding.FragmentFavouriteBinding
-import com.prototype.quotes.databinding.FragmentHomeBinding
-import com.prototype.quotes.ui.home.HomeAdapter
-import com.prototype.quotes.ui.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
