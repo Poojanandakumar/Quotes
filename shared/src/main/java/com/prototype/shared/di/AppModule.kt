@@ -2,8 +2,8 @@ package com.prototype.shared.di
 
 import android.content.Context
 import androidx.room.Room
-import com.prototype.model.room.FavouriteQuoteDao
-import com.prototype.model.room.FavouriteQuoteRoomDatabase
+import com.prototype.shared.room.FavouriteQuoteDao
+import com.prototype.shared.room.FavouriteQuoteRoomDatabase
 import com.prototype.shared.data.DefaultQuotesRepository
 import com.prototype.shared.data.QuotesDataSource
 import com.prototype.shared.data.QuotesRepository
@@ -63,7 +63,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideSearchDatabase(@ApplicationContext context : Context):FavouriteQuoteRoomDatabase{
+    fun provideSearchDatabase(@ApplicationContext context : Context): FavouriteQuoteRoomDatabase {
        return Room.databaseBuilder(context, FavouriteQuoteRoomDatabase::class.java, "favouriteQuote_database")
             .build()
     }

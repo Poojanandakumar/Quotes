@@ -1,8 +1,7 @@
-package com.prototype.shared.data
+package com.prototype.shared.domain
 
-import androidx.annotation.WorkerThread
-import com.prototype.model.room.FavouriteQuoteDao
-import com.prototype.model.room.FavouriteQuoteEntity
+import com.prototype.shared.room.FavouriteQuoteDao
+import com.prototype.shared.room.FavouriteQuoteEntity
 import javax.inject.Inject
 
 class FavouriteQuoteAddUseCase @Inject constructor(private val favouriteQuoteDao: FavouriteQuoteDao) {

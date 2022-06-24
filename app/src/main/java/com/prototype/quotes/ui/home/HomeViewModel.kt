@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.prototype.model.QuotesData
-import com.prototype.model.room.FavouriteQuoteEntity
-import com.prototype.shared.data.FavouriteQuoteAddUseCase
+import com.prototype.shared.room.FavouriteQuoteEntity
+import com.prototype.shared.domain.FavouriteQuoteAddUseCase
 import com.prototype.shared.domain.GetQuotesUseCase
 import com.prototype.shared.util.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val getQuotesUseCase: GetQuotesUseCase,
-private val favouriteQuoteAddUseCase: FavouriteQuoteAddUseCase) : ViewModel() {
+private val favouriteQuoteAddUseCase: FavouriteQuoteAddUseCase
+) : ViewModel() {
     private val _data = MutableLiveData<QuotesData>()
     val data: LiveData<QuotesData> = _data
 
