@@ -23,10 +23,16 @@ class FavouriteFragment : Fragment() {
         binding = FragmentFavouriteBinding.inflate(layoutInflater, container, false)
         viewModel.getFavouriteQuotes()
         viewModel.data.observe(viewLifecycleOwner){
-            val recyclerView = binding.root.findViewById<RecyclerView>(R.id.recyclerView)
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            binding.recyclerView.adapter =
-                FavouriteQuotesAdapter(it,viewModel)
+            if(it.isNotEmpty()){
+                val recyclerView = binding.root.findViewById<RecyclerView>(R.id.recyclerView)
+                recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                binding.recyclerView.adapter =
+                    FavouriteQuotesAdapter(it,viewModel)
+            }else{
+                binding.recyclerView.visibility = View.INVISIBLE
+                binding.animationView.visibility = View.VISIBLE
+            }
+
         }
 
         return binding.root

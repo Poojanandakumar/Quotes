@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.235" />
         <entry key="app/src/main/res/drawable/ic_light.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/splash_background_dark.xml" value="0.235" />
         <entry key="app/src/main/res/drawable/splash_background_light.xml" value="0.235" />
