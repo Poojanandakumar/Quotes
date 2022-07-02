@@ -32,9 +32,7 @@ class FavouriteFragment : Fragment() {
                 binding.recyclerView.visibility = View.INVISIBLE
                 binding.animationView.visibility = View.VISIBLE
             }
-
         }
-
         return binding.root
     }
 }
