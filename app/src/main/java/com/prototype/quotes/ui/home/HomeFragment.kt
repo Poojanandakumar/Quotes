@@ -27,8 +27,10 @@ class HomeFragment : Fragment() {
         viewModel.data.observe(viewLifecycleOwner) {
             val recyclerView = binding.root.findViewById<RecyclerView>(R.id.recyclerView)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            binding.recyclerView.adapter =
-                HomeAdapter(it.results,viewModel)
+            if (it != null) {
+                binding.recyclerView.adapter =
+                    HomeAdapter(it.results,viewModel)
+            }
         }
         viewModel.error.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()

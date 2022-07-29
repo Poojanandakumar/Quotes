@@ -20,8 +20,8 @@ class HomeViewModel @Inject constructor(
     private val favouriteQuoteAddUseCase: FavouriteQuoteAddUseCase,
     private val favouriteQuoteDeleteUseCase: FavouriteQuoteDeleteUseCase
 ) : ViewModel() {
-    private val _data = MutableLiveData<QuotesData>()
-    val data: LiveData<QuotesData> = _data
+    private val _data = MutableLiveData<QuotesData?>()
+    val data: MutableLiveData<QuotesData?> = _data
 
     private val _error = MutableLiveData<Exception>()
     val error: LiveData<Exception> = _error
