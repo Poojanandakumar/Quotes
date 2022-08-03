@@ -18,6 +18,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/favourite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24_filled"
+        android:layout_gravity="center_horizontal|end"
+        app:layout_constraintLeft_toRightOf="@+id/text"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="12dp"
+        tools:ignore="ContentDescription" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/lottie_layout"
         android:layout_width="match_parent"
